@@ -5,10 +5,13 @@ import java.util.Map;
 
 public class MorseLogik {
 
-    private static final Map<Character, String> textToMorseMap = new HashMap<>();
-    private static final Map<String, Character> morseToTextMap = new HashMap<>();
+    private final Map<Character, String> textToMorseMap;
+    private final Map<String, Character> morseToTextMap;
 
-    static {
+    public MorseLogik() {
+        textToMorseMap = new HashMap<>();
+        morseToTextMap = new HashMap<>();
+
         textToMorseMap.put('A', ".-");
         textToMorseMap.put('B', "-...");
         textToMorseMap.put('C', "-.-.");
@@ -58,7 +61,6 @@ public class MorseLogik {
         return morse.toString();
     }
 
-
     public String morseToText(String morse) {
         if (morse == null || morse.isEmpty()) {
             return "";
@@ -75,7 +77,6 @@ public class MorseLogik {
                 if (decodedChar != null) {
                     decodedText.append(decodedChar);
                 } else {
-
                     return "";
                 }
             }
@@ -84,7 +85,8 @@ public class MorseLogik {
 
         return decodedText.toString().trim();
     }
-    public static boolean containsInvalidCharacters(String text) {
+
+    public boolean containsInvalidCharacters(String text) {
         return !text.matches("[a-zA-Z\\s]+");
     }
 }

@@ -18,7 +18,8 @@ public class MorseMain {
 
             if (textInput.isEmpty()) {
                 System.out.println("Du måste skriva in en text.");
-            } else if (MorseLogik.containsInvalidCharacters(textInput)) {
+            } else if (converter.containsInvalidCharacters(textInput)) {
+
                 System.out.println("Texten får endast innehålla bokstäver mellan A-Z samt mellanslag.");
             } else {
                 String morseOutput = converter.textToMorse(textInput);
