@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class MorseLogik {
 
-    private final Map<Character, String> textToMorseMap;
-    private final Map<String, Character> morseToTextMap;
+    private Map<Character, String> textToMorseMap;
+    private Map<String, Character> morseToTextMap;
 
     public MorseLogik() {
         textToMorseMap = new HashMap<>();
